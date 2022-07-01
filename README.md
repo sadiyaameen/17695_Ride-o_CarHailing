@@ -15,3 +15,20 @@
 4. Accept a ride and Cancel a ride
   
     ...Other features
+
+
+# Desgin Patterns:
+
+1. Creational: 
+        i) Singleton
+        ii) Factory Method
+        iii) Builder
+2. Structural:
+        i) Decorator
+        ii) Adaptor
+        iii) Bridge
+3. Behavioral:
+        i) Strategy
+        ii) Observer
+        iii) Chain of Responibility
+        iv) Momento
