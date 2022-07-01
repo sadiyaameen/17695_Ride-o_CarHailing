@@ -27,6 +27,17 @@ public class Ride_o_CarHailing {
                 driver.displayDriverDetails();
             }
             case 2: {
+                System.out.println("Enter name:");
+                String commuterName = scanner.nextLine();
+                System.out.println("Enter date Of Birth");
+                Date commuterdob = new SimpleDateFormat("dd/MM/yyyy").parse(scanner.nextLine());
+                System.out.println("Enter phoneNumber:");
+                String phoneNumber = scanner.nextLine();
+                System.out.println("Enter mode of Payment:");
+                String paymentMode = scanner.nextLine();
+
+                Commuter commuter = new Commuter(commuterName,phoneNumber,paymentMode,commuterdob);
+                commuter.displayCommuterDetails();
 
             }
         }
