@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Vehicle {
 
@@ -7,7 +8,11 @@ public class Vehicle {
     private int noSeats;
     private boolean status;
     private int type; // 1-Car,2-bike or 3-Van
-    private ArrayList<Vehicle> vehicles;
+    public static final int CAR = 1;
+    public static final int BIKE = 2;
+    public static final int VAN = 3;
+
+    private List<Vehicle> vehicles = new ArrayList<>();
 
     public Vehicle(String brand, String regNo, int noSeats,boolean status, int type) {
         this.brand = brand;

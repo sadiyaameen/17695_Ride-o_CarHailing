@@ -1,5 +1,9 @@
 public class Car extends Vehicle{
     private int carType; //1: small, 2:medium, 3:large
+    public static int SMALL = 1;
+    public static int MEDIUM = 2;
+    public static int LARGE = 3;
+
 
     public Car(String brand, String regNo, int noSeats, boolean status, int type) {
         super(brand, regNo, noSeats, status,type);

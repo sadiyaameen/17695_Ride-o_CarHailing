@@ -27,5 +27,10 @@ public class Ride {
 //        this.waitingTime = localTime - this.timeArrived;
     }
 
+    public void setAddress(String pickUpAddress, String dropOffAddress){
+        this.pickUpAddress = pickUpAddress;
+        this.dropOffAddress = dropOffAddress;
+    }
+
 
 }

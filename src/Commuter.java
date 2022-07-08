@@ -6,14 +6,12 @@ public class Commuter {
     private String name;
     private String phoneNumber;
     private String paymentMode;
-    private Date datOfBirth;
 
 
-    public Commuter(String name, String phoneNumber, String paymentMode,Date datOfBirth){
+    public Commuter(String name, String phoneNumber, String paymentMode){
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.paymentMode = paymentMode;
-        this.datOfBirth = datOfBirth;
     }
 
 
@@ -26,15 +24,16 @@ public class Commuter {
     public void setPaymentMode(String paymentMode) { this.paymentMode = paymentMode;}
     public String getPaymentMode(){ return paymentMode;}
 
-    public void setDatOfBirth(Date datOfBirth) { this.datOfBirth = datOfBirth;}
-    public Date getDatOfBirth(){ return datOfBirth;}
 
     public void displayCommuterDetails(){
         System.out.println("Name:"+this.name);
-        System.out.println("Date of Birth:"+this.datOfBirth);
         System.out.println("Phone Number:"+this.phoneNumber);
         System.out.println("Default Payment Mode:"+this.paymentMode);
 
+    }
+
+    public void changeModeOfPayment(String paymentMode){
+        this.paymentMode=paymentMode;
     }
 
 
