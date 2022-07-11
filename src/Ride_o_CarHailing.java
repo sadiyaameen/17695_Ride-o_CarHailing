@@ -7,8 +7,12 @@ import java.util.*;
 public class Ride_o_CarHailing {
 
     public static void main(String args[]) throws ParseException {
+        startFunction();
+
+    }
+
+    public static void startFunction() throws ParseException {
         Scanner scan = new Scanner(System.in);
-        Scanner scanner = new Scanner(System.in);
         int choice;
 
         System.out.println("Welcome to Ride'O!");
@@ -116,6 +120,7 @@ public class Ride_o_CarHailing {
 
 
         System.out.println("Select:\n 1: To register a new vehicle\n 2: To hire a vehicle\n 3: Turn on or off the ride\n 4: Accept or cancel a ride\n  ");
+        System.out.println("Press 0 to return to main menu");
         int choice = scan.nextInt();
 
         switch (choice){
@@ -135,6 +140,8 @@ public class Ride_o_CarHailing {
                 break;
 
             case 2:
+            case 0: startFunction();
+
 
         }
 
