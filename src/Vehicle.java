@@ -6,7 +6,13 @@ public class Vehicle {
     private String brand;
     private String regNo;
     private int noSeats;
-    private boolean status;
+//    private enum status{AVAILABLE,UNAVAILABLE};
+    private boolean status; // True - available . False - unavailable
+
+    public int getType() {
+        return type;
+    }
+
     private int type; // 1-Car,2-bike or 3-Van
     public static final int CAR = 1;
     public static final int BIKE = 2;
@@ -14,13 +20,14 @@ public class Vehicle {
 
     private List<Vehicle> vehicles = new ArrayList<>();
 
+
     public Vehicle(String brand, String regNo, int noSeats,boolean status, int type) {
         this.brand = brand;
         this.regNo = regNo;
         this.noSeats = noSeats;
         this.status = status;
         this.type = type;
-//        addVehicle(this);
+
     }
 
     public void selectVehicleType(int type){
@@ -39,7 +46,4 @@ public class Vehicle {
 
     }
 
-    public void listAllVehicles(){
-        System.out.println();
-    }
 }

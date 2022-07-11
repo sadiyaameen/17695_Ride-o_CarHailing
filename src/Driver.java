@@ -8,7 +8,45 @@ public class Driver {
     private Vector languages = null;
     private String phoneNumber;
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLicense() {
+        return license;
+    }
+
+    public void setLicense(String license) {
+        this.license = license;
+    }
+
+    public Date getDatOfBirth() {
+        return datOfBirth;
+    }
+
+    public void setDatOfBirth(Date datOfBirth) {
+        this.datOfBirth = datOfBirth;
+    }
+
+    public Vector getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(Vector languages) {
+        this.languages = languages;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
     public Driver(String name, String license, Date datOfBirth, String phoneNumber,String languages){
         this.name = name;
         this.license = license;
@@ -16,19 +54,6 @@ public class Driver {
         this.phoneNumber = phoneNumber;
 //        this.languages = languages;
     }
-
-
-    public void setName(String name) { this.name = name;}
-    public String getName(){ return name;}
-
-    public void setLicense(String license) { this.license = license;}
-    public String getLicense(){ return license;}
-
-    public void setDatOfBirth(Date datOfBirth) { this.datOfBirth = datOfBirth;}
-    public Date getDatOfBirth(){ return datOfBirth;}
-
-    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber;}
-    public String getPhoneNumber(){ return phoneNumber;}
 
     public void addLanguages (String newLanguage){
         languages.addElement(newLanguage);

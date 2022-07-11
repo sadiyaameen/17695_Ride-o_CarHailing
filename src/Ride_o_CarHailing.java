@@ -2,15 +2,18 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+
+
 public class Ride_o_CarHailing {
+
     public static void main(String args[]) throws ParseException {
         Scanner scan = new Scanner(System.in);
         Scanner scanner = new Scanner(System.in);
         int choice;
 
         System.out.println("Welcome to Ride'O!");
-        System.out.println("To register press 1.");
-        System.out.println("If you are an existing commuter press 2, if you are existing driver press 3.");
+        System.out.println("To register as a user press 1.");
+        System.out.println("If you are an existing user press:\n   Press 2: Commuter\n   Press 3: Driver\n");
 
 
         choice = scan.nextInt();
@@ -24,6 +27,7 @@ public class Ride_o_CarHailing {
                 break;
             }
             case 3: {
+                setDriverActions();
                 break;
             }
             default: System.out.println("Invalid Option.");
@@ -73,9 +77,77 @@ public class Ride_o_CarHailing {
 
     }
 
+    public static void setCommuterActions() {
+        Scanner scan = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Select:\n 1: To hire a car and start a ride\n 2: To track a ride\n 3: To pay for a ride\n  ");
+        int choice = scan.nextInt();
+
+        switch (choice) {
+            case 1:
+                setRide();
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default: System.out.println("Invalid Option.");
+
+        }
+    }
+
+    public static void setDriverActions() throws ParseException {
+        Scanner scan = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+
+        // Creating default driver - if there was a login, this would take the login details
+        String date = "08-20-1992 00:00:00.0";
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
+
+        Driver driver = new Driver("driverName","123456",dt.parse(date),"123-456-7890","English, Spanish");
+        Vehicle car_1 = new Vehicle("Honda", "PA 1234532", 4, true, Vehicle.CAR);
+
+        // Adding the existing vehicle to the vehicle list
+        VehicleList vehicleList = new VehicleList();
+        vehicleList.addVehicle(car_1);
+        System.out.println("Printing Vehicles:\n");
+        vehicleList.listAllVehicle();
+
+
+        System.out.println("Select:\n 1: To register a new vehicle\n 2: To hire a vehicle\n 3: Turn on or off the ride\n 4: Accept or cancel a ride\n  ");
+        int choice = scan.nextInt();
+
+        switch (choice){
+            case 1:
+                System.out.println("Enter the registration number:\n");
+                String regNo = scanner.nextLine();
+                System.out.println("Enter the brand name:\n");
+                String brand = scanner.nextLine();
+                System.out.println("Enter the number of seats available:\n");
+                int noSeats = scan.nextInt();
+                System.out.println("Enter the type of vehicle (1: Car, 2: Bike, 3: Van):\n");
+                int type = scan.nextInt();
+                Vehicle new_vehicle = new Vehicle(brand, regNo, noSeats, true, type);
+                vehicleList.addVehicle(new_vehicle);
+
+                vehicleList.listAllVehicle();
+                break;
+
+            case 2:
+
+        }
+
+
+    }
+
+
     public static void setRide(){
         Scanner scan = new Scanner(System.in);
         Scanner scanner = new Scanner(System.in);
+
+        // Creating default driver - if there was a login, this would take the login details
+        Commuter commuter = new Commuter("commuterName","123-456-7890","Cash");
 
         System.out.println("Select a Type of Vehicle: 1- Car, 2- Bike, 3- Van");
         int vehicleType = scan.nextInt();
