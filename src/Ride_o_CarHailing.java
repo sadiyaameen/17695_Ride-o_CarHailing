@@ -27,7 +27,7 @@ public class Ride_o_CarHailing {
                 break;
             }
             case 2: {
-                setRide();
+                setCommuterActions();
                 break;
             }
             case 3: {

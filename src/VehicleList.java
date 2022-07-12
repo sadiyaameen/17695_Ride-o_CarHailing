@@ -4,8 +4,6 @@ import java.util.List;
 
 public class VehicleList {
 
-    Iterator iter = null;
-    private static VehicleList oneInstance = null;
     private List<Vehicle> vehicles;
 
 
@@ -28,37 +26,41 @@ public class VehicleList {
         }
     }
 
-    public void createIterator(){
+    public List<Vehicle> getAllAvailableVans(){
+        List<Vehicle>  list_of_vans = new ArrayList<Vehicle>();
 
-    }
-
-//    public VehicleList getInstance(){
-//        if (oneInstance == null)
-//            oneInstance = new VehicleList();
-//        return oneInstance;
-//    }
-
-
-    public void getAllAvailableVans(){
         for (int i = 0; i < vehicles.size(); i++) {
-            if (vehicles.get(i).getType() == Vehicle.VAN)
-            System.out.println(vehicles.get(i) + " ");
-        }
-    }
-
-    public void getAllAvailableCars(){
-        for (int i = 0; i < vehicles.size(); i++) {
-            if (vehicles.get(i).getType() == Vehicle.CAR)
+            if ((vehicles.get(i).getType() == Vehicle.VAN) & (vehicles.get(i).getStatusOfVehicle())){
                 System.out.println(vehicles.get(i) + " ");
+                list_of_vans.add(vehicles.get(i));
+            }
         }
+        return list_of_vans;
+    }
+
+    public List<Vehicle> getAllAvailableCars(){
+        List<Vehicle>  list_of_cars = new ArrayList<Vehicle>();
+
+        for (int i = 0; i < vehicles.size(); i++) {
+            if ((vehicles.get(i).getType() == Vehicle.CAR) & (vehicles.get(i).getStatusOfVehicle())){
+                System.out.println(vehicles.get(i) + " ");
+                list_of_cars.add(vehicles.get(i));
+            }
+        }
+        return list_of_cars;
 
     }
 
-    public void getAllAvailableBikes(){
+    public List<Vehicle> getAllAvailableBikes(){
+        List<Vehicle>  list_of_bikes = new ArrayList<Vehicle>();
+
         for (int i = 0; i < vehicles.size(); i++) {
-            if (vehicles.get(i).getType() == Vehicle.BIKE)
+            if ((vehicles.get(i).getType() == Vehicle.BIKE) & (vehicles.get(i).getStatusOfVehicle())){
                 System.out.println(vehicles.get(i) + " ");
+                list_of_bikes.add(vehicles.get(i));
+            }
         }
+        return list_of_bikes;
 
     }
 

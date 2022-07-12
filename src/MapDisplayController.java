@@ -1,8 +1,14 @@
 import java.util.ArrayList;
+import java.util.List;
 
-public class MapDisplayController extends Map {
+public class MapDisplayController{
+    private VehicleList vehicleList = new VehicleList();
 
-    private VehicleList vehiclesList = new VehicleList();
+    public MapDisplayController(VehicleList vehicleList){
+
+    }
+
+
 //    private ArrayList<Vehicle> getAllAvailableCars() {
 //        ArrayList<Vehicle> availableCare = new ArrayList<Vehicle>;
 //        VehicleIterator iter = vehiclesList.createAvailableCarIterator();

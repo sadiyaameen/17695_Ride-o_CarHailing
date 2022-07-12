@@ -3,6 +3,7 @@ public class Car extends Vehicle{
     public static int SMALL = 1;
     public static int MEDIUM = 2;
     public static int LARGE = 3;
+    private int mode=3;
 
 
     public Car(String brand, String regNo, int noSeats, boolean status, int type) {

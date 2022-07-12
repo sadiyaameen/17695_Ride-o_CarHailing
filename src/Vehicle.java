@@ -46,4 +46,8 @@ public class Vehicle {
 
     }
 
+    public boolean getStatusOfVehicle(){
+        return status;
+    }
+
 }
