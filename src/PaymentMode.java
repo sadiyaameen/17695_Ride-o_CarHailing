@@ -1,7 +1,7 @@
 public class PaymentMode {
-    private int mode; // 1- Cash, 2- Credit, 3- debit, 4- google pay, 5- apple pay
+    private int mode; // 1- ccpayment, 2 - Wallet, 3 - cash
 
-    public void selectPaymentMode(int mode){
+    public PaymentMode(int mode){
         this.mode = mode;
     }
 }

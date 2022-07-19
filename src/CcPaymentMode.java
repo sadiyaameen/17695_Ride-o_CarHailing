@@ -7,7 +7,8 @@ public class CcPaymentMode extends PaymentMode{
     private String authNo;
     private int mode=1;
 
-    public void CcPaymentMode(int number,Date expDate,String bank,String authNo){
+    public CcPaymentMode(int number,Date expDate,String bank,String authNo){
+        super(1);
         this.number = number;
         this.expDate = expDate;
         this.bank = bank;

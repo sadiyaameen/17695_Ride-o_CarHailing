@@ -1,5 +1,6 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.*;
 
 
@@ -81,7 +82,7 @@ public class Ride_o_CarHailing {
 
     }
 
-    public static void setCommuterActions() {
+    public static void setCommuterActions() throws ParseException {
         Scanner scan = new Scanner(System.in);
         Scanner scanner = new Scanner(System.in);
 
@@ -149,7 +150,7 @@ public class Ride_o_CarHailing {
     }
 
 
-    public static void setRide(){
+    public static void setRide() throws ParseException {
         Scanner scan = new Scanner(System.in);
         Scanner scanner = new Scanner(System.in);
 
@@ -169,6 +170,16 @@ public class Ride_o_CarHailing {
 
         System.out.println("Enter the drop off  address:");
         String dropOffAddress = scanner.nextLine();
+
+        Ride ride = new Ride(java.time.LocalDate.now(), LocalTime.now(),pickUpAddress,dropOffAddress);
+        ride.startRide(LocalTime.now());
+
+        System.out.println("Enter 1 to stop ride:");
+        int stopRideFlag = scan.nextInt();
+
+        if (stopRideFlag==1){
+            ride.endRide(LocalTime.now());
+        }
 
 
 

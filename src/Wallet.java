@@ -1,8 +1,9 @@
 public class Wallet extends PaymentMode{
     private float balance;
-    private int mode=2;
+    private int mode;
 
-    public void Wallet(float balance){
+    public Wallet(float balance){
+        super(2);
         this.balance = balance;
     }
 }
