@@ -5,8 +5,6 @@ import java.util.List;
 public class VehicleList {
 
     private List<Vehicle> vehicles;
-
-
     public VehicleList(){
         vehicles = new ArrayList<Vehicle>();
     }

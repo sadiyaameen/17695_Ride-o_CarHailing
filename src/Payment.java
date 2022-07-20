@@ -28,6 +28,8 @@ public class Payment {
         float totalMinutes = ride.returnRideTime()/20;
 
         this.totalCost = this.baseCost + this.waitingCharges + this.tollCharges + totalMinutes;
+
+        System.out.println(this.totalCost);
     }
 
 }

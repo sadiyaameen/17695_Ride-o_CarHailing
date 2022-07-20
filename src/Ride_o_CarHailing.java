@@ -94,8 +94,10 @@ public class Ride_o_CarHailing {
                 setRide();
                 break;
             case 2:
+                System.out.println("...\n");
                 break;
             case 3:
+                System.out.println("");
                 break;
             default: System.out.println("Invalid Option.");
 
@@ -181,7 +183,16 @@ public class Ride_o_CarHailing {
             ride.endRide(LocalTime.now());
         }
 
+        makePayment(ride);
+    }
 
+    public static void makePayment(Ride ride){
+        Scanner scan = new Scanner(System.in);
 
+        System.out.println("Select the mode of payment.");
+        System.out.println("Press 1: Credit Card, 2: Wallet, 3: Cash");
+        int mode = scan.nextInt();
+        Payment payment = new Payment(mode);
+        payment.calculatePayment(ride);
     }
 }
