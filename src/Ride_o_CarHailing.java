@@ -176,11 +176,11 @@ public class Ride_o_CarHailing {
         Ride ride = new Ride(java.time.LocalDate.now(), LocalTime.now(),pickUpAddress,dropOffAddress);
         ride.startRide(LocalTime.now());
 
-        System.out.println("Enter 1 to stop ride:");
+        System.out.println("Enter 1 to end ride:");
         int stopRideFlag = scan.nextInt();
 
         if (stopRideFlag==1){
-            ride.endRide(LocalTime.now());
+            ride.completeRide(LocalTime.now());
         }
 
         makePayment(ride);

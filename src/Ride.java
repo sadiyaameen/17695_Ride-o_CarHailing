@@ -54,7 +54,7 @@ public class Ride {
 
     }
 
-    public void endRide(LocalTime time) throws ParseException {
+    public void completeRide(LocalTime time) throws ParseException {
         this.endDate = java.time.LocalDate.now();
         this.endTime = time.toString(); //"20:52:59.331148";
         Date formatStartTime = format.parse(this.startTime);
@@ -71,6 +71,12 @@ public class Ride {
     public long returnRideTime(){
         return this.rideTime;
     }
+
+    public Payment getPayment(){
+        Payment payment = new Payment();
+        return payment;
+    }
+
 
 
 
