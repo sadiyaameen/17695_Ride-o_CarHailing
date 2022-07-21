@@ -18,13 +18,16 @@ public class Ride {
     private String dropOffAddress;
     private long rideTime;
     SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+    private int mode;
+    private int membershipStatus; // 1- if is member, 2 - if not a member
 
 
-    public Ride(LocalDate startDate, LocalTime timeBooked, String pickUpAddress, String dropOffAddress){
+    public Ride(LocalDate startDate, LocalTime timeBooked, String pickUpAddress, String dropOffAddress,int membershipStatus){
         this.startDate = startDate;
         this.timeBooked = timeBooked.toString();
         this.pickUpAddress = pickUpAddress;
         this.dropOffAddress = dropOffAddress;
+        this.membershipStatus = membershipStatus;
     }
 
     public void driverArrived(Time timeArrived) {
@@ -54,15 +57,15 @@ public class Ride {
 
     }
 
-    public void endRide(LocalTime time) throws ParseException {
-        this.endDate = java.time.LocalDate.now();
-        this.endTime = time.toString(); //"20:52:59.331148";
-        Date formatStartTime = format.parse(this.startTime);
-        Date formatEndTime = format.parse(this.endTime);
-
-        this.rideTime = (Math.abs(formatEndTime.getTime() - formatStartTime.getTime())/1000)/60; // Difference in minutes
-        System.out.println(this.rideTime);
-    }
+//    public void completeRide(LocalTime time) throws ParseException {
+//        this.endDate = java.time.LocalDate.now();
+//        this.endTime = time.toString(); //"20:52:59.331148";
+//        Date formatStartTime = format.parse(this.startTime);
+//        Date formatEndTime = format.parse(this.endTime);
+//
+//        this.rideTime = (Math.abs(formatEndTime.getTime() - formatStartTime.getTime())/1000)/60; // Difference in minutes
+//        System.out.println(this.rideTime);
+//    }
 
     public long returnWaitTime(){
         return this.waitingTime;
@@ -70,6 +73,19 @@ public class Ride {
 
     public long returnRideTime(){
         return this.rideTime;
+    }
+
+    public Payment getPayment(){
+        Payment payment = new Payment();
+        return payment;
+    }
+
+    public String getStartTime(){
+        return startTime;
+    }
+
+    public int getMembershipStatus(){
+        return membershipStatus;
     }
 
 

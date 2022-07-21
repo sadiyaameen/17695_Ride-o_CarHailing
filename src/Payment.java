@@ -14,6 +14,12 @@ public class Payment {
         this.mode = mode;
     }
 
+    public Payment(){}
+
+    public void setPayment(int mode){
+        this.mode = mode;
+    }
+
     //Function called only if there are toll charges
     public void setTollCharges(float tollCharges){
         this.tollCharges = tollCharges;
@@ -32,4 +38,19 @@ public class Payment {
         System.out.println(this.totalCost);
     }
 
+    public float getBaseCost() {
+        return baseCost;
+    }
+
+    public float getTollCharges() {
+        return tollCharges;
+    }
+
+    public float getWaitingCharges() {
+        return waitingCharges;
+    }
+
+    public float getTotalCost() {
+        return totalCost;
+    }
 }

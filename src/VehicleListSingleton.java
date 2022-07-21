@@ -1,5 +1,3 @@
-package withDesignPatterns;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -17,7 +15,7 @@ public class VehicleListSingleton {
         vehicles = new ArrayList<Vehicle>();
     }
 
-    public VehicleListSingleton getInstance(){
+    public static VehicleListSingleton getInstance(){
         if (oneInstance == null)
             oneInstance = new VehicleListSingleton();
         return oneInstance;

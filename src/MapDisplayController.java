@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MapDisplayController{
-    private VehicleList vehicleList = new VehicleList();
+    private VehicleListSingleton vehicleList = new VehicleListSingleton();
 
-    public MapDisplayController(VehicleList vehicleList){
+    public MapDisplayController(VehicleListSingleton vehicleList){
 
     }
 

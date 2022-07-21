@@ -112,11 +112,12 @@ public class Ride_o_CarHailing {
         String date = "08-20-1992 00:00:00.0";
         SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
 
+        // Adding a car to the vehicle list
         Driver driver = new Driver("driverName","123456",dt.parse(date),"123-456-7890","English, Spanish");
         Vehicle car_1 = new Vehicle("Honda", "PA 1234532", 4, true, Vehicle.CAR);
 
         // Adding the existing vehicle to the vehicle list
-        VehicleList vehicleList = new VehicleList();
+        VehicleListSingleton vehicleList = VehicleListSingleton.getInstance();
         vehicleList.addVehicle(car_1);
         System.out.println("Printing Vehicles:\n");
         vehicleList.listAllVehicle();
@@ -128,21 +129,15 @@ public class Ride_o_CarHailing {
 
         switch (choice){
             case 1:
-                System.out.println("Enter the registration number:\n");
-                String regNo = scanner.nextLine();
-                System.out.println("Enter the brand name:\n");
-                String brand = scanner.nextLine();
-                System.out.println("Enter the number of seats available:\n");
-                int noSeats = scan.nextInt();
                 System.out.println("Enter the type of vehicle (1: Car, 2: Bike, 3: Van):\n");
                 int type = scan.nextInt();
-                Vehicle new_vehicle = new Vehicle(brand, regNo, noSeats, true, type);
+                VehicleFactoryParameterized vehicleFactory = new VehicleFactoryParameterized();
+                Vehicle new_vehicle = vehicleFactory.create(type);
                 vehicleList.addVehicle(new_vehicle);
-
                 vehicleList.listAllVehicle();
                 break;
 
-            case 2:
+            case 2:break;
             case 0: startFunction();
 
 
@@ -155,6 +150,9 @@ public class Ride_o_CarHailing {
     public static void setRide() throws ParseException {
         Scanner scan = new Scanner(System.in);
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Are you a member? 1- yes . 2 - no");
+        int membershipStatus = scan.nextInt();
 
         // Creating default driver - if there was a login, this would take the login details
         Commuter commuter = new Commuter("commuterName","123-456-7890","Cash");
@@ -173,14 +171,16 @@ public class Ride_o_CarHailing {
         System.out.println("Enter the drop off  address:");
         String dropOffAddress = scanner.nextLine();
 
-        Ride ride = new Ride(java.time.LocalDate.now(), LocalTime.now(),pickUpAddress,dropOffAddress);
+        Ride ride = new Ride(java.time.LocalDate.now(), LocalTime.now(),pickUpAddress,dropOffAddress,membershipStatus);
         ride.startRide(LocalTime.now());
 
-        System.out.println("Enter 1 to stop ride:");
+        RideController rc = new RideController();
+
+        System.out.println("Enter 1 to end ride:");
         int stopRideFlag = scan.nextInt();
 
         if (stopRideFlag==1){
-            ride.endRide(LocalTime.now());
+            rc.completeRide(ride);
         }
 
         makePayment(ride);
