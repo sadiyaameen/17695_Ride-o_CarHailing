@@ -23,6 +23,8 @@ public class RideController {
     }
 
     public boolean isPeakHour(Ride ride){
+
+        //TODO: Add peak hour logic
         if (ride.getStartTime() == "19:00"){
             return true;
         }
